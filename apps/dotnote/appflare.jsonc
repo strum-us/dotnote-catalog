@@ -2,7 +2,7 @@
   "$schema": "https://appflare.github.io/catalog/schema/v1.json",
   "slug": "dotnote",
   "name": "Dotnote",
-  "summary": "A markdown notes app that runs in your own Cloudflare account. Notes are plain files in your R2 bucket, with offline editing, search, and version history.",
+  "summary": "A markdown notes app that runs in your own Cloudflare account. Notes are plain files in your R2 bucket.\n\nWrite offline, search every note from the keyboard, and restore an earlier version. Share one note with a link you can turn off.\n\nAI is optional. Add your own key and ask from the editor. Requests go from your Worker to the provider you choose.",
   "tagline": "Markdown notes that live in your Cloudflare account",
   "features": [
     "Write markdown notes stored as plain files in your account",

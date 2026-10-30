@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-30T05:28:09.643Z",
+  "generatedAt": "2026-10-30T07:28:18.744Z",
   "apps": [
     {
       "slug": "dotnote",
       "repo": "strum-us/dotnote",
       "name": "Dotnote",
-      "summary": "A markdown notes app that runs in your own Cloudflare account. Notes are plain files in your R2 bucket, with offline editing, search, and version history.",
+      "summary": "A markdown notes app that runs in your own Cloudflare account. Notes are plain files in your R2 bucket.\n\nWrite offline, search every note from the keyboard, and restore an earlier version. Share one note with a link you can turn off.\n\nAI is optional. Add your own key and ask from the editor. Requests go from your Worker to the provider you choose.",
       "tagline": "Markdown notes that live in your Cloudflare account",
       "features": [
         "Write markdown notes stored as plain files in your account",
@@ -44,6 +44,34 @@
       "maintainers": [
         "gssisaac"
       ],
+      "media": {
+        "icon": {
+          "url": "https://raw.githubusercontent.com/strum-us/dotnote-catalog/main/apps/dotnote/icon.svg",
+          "sha256": "a0702618fc8bfdd8ddb83014ab6e300e4b406f731fe7c21b5ee78ba44f841d07"
+        },
+        "screenshots": [
+          {
+            "url": "https://raw.githubusercontent.com/strum-us/dotnote-catalog/main/apps/dotnote/screenshots/01-workspace.png",
+            "sha256": "5a101a53f748460a3b466ab7c35a962c8663a2ebbb4d8da13cb67d1ef459877f",
+            "alt": "Dotnote: Workspace"
+          },
+          {
+            "url": "https://raw.githubusercontent.com/strum-us/dotnote-catalog/main/apps/dotnote/screenshots/02-editor-tabs.png",
+            "sha256": "86bee5b034f43e136eaae0a600e5a5670f4e4e1acd1faf05f3b9a4d65acfbd5a",
+            "alt": "Dotnote: Editor tabs"
+          },
+          {
+            "url": "https://raw.githubusercontent.com/strum-us/dotnote-catalog/main/apps/dotnote/screenshots/03-shared-note.png",
+            "sha256": "699cbe611a06ddf25feb50fbbeabf339ab77417c914ec1e4f1c13eadec721630",
+            "alt": "Dotnote: Shared note"
+          },
+          {
+            "url": "https://raw.githubusercontent.com/strum-us/dotnote-catalog/main/apps/dotnote/screenshots/04-ai-editor.png",
+            "sha256": "c7ac56022869831ebe1908a23fc9283bedd22bdbc02eb106a39776e9323dc931",
+            "alt": "Dotnote: Ai editor"
+          }
+        ]
+      },
       "services": [
         "d1",
         "r2",
