@@ -1,5 +1,64 @@
 {
-  "generatedAt": "2026-10-30T05:00:00.000Z",
-  "apps": [],
-  "featured": []
+  "generatedAt": "2026-10-30T05:28:09.643Z",
+  "apps": [
+    {
+      "slug": "dotnote",
+      "repo": "strum-us/dotnote",
+      "name": "Dotnote",
+      "summary": "A markdown notes app that runs in your own Cloudflare account. Notes are plain files in your R2 bucket, with offline editing, search, and version history.",
+      "tagline": "Markdown notes that live in your Cloudflare account",
+      "features": [
+        "Write markdown notes stored as plain files in your account",
+        "Keep editing offline and sync when you reconnect",
+        "Search every note from the keyboard",
+        "Restore an earlier version of a note",
+        "Share one note with a link you can turn off",
+        "Ask an AI model with a key you provide"
+      ],
+      "alternativeTo": [
+        "Notion",
+        "Obsidian"
+      ],
+      "addedAt": "2026-10-30T14:26:31+09:00",
+      "version": "0.2.10",
+      "artifacts": {
+        "zip": "https://github.com/strum-us/dotnote-catalog/releases/download/dotnote@0.2.10/dotnote-0.2.10.zip",
+        "manifest": "https://github.com/strum-us/dotnote-catalog/releases/download/dotnote@0.2.10/manifest.json",
+        "sig": "https://github.com/strum-us/dotnote-catalog/releases/download/dotnote@0.2.10/manifest.sig",
+        "digest": "20bbfff809ae886b1e19aa3eed94fa9fe384926a018371778d4361502c486305"
+      },
+      "tier": "artifact",
+      "plan": "free",
+      "requires": [
+        "r2",
+        "config-patch-values"
+      ],
+      "lastVerified": null,
+      "authors": [
+        {
+          "name": "Strum Technology",
+          "url": "https://dotnote.cloud",
+          "github": "strum-us"
+        }
+      ],
+      "maintainers": [
+        "gssisaac"
+      ],
+      "services": [
+        "d1",
+        "r2",
+        "cron"
+      ],
+      "categories": [
+        "notes",
+        "productivity"
+      ],
+      "license": "LicenseRef-SustainableUse-1.0",
+      "licenseNote": "Source-available: personal and internal use is free; see LICENSE.md",
+      "revision": 1,
+      "accessOffer": "offered"
+    }
+  ],
+  "featured": [],
+  "stats": "https://strum-us.github.io/dotnote-catalog/stats.json"
 }
