@@ -1,0 +1,54 @@
+{
+  "$schema": "https://appflare.github.io/catalog/schema/v1.json",
+  "slug": "dotnote",
+  "name": "Dotnote",
+  "summary": "A markdown notes app that runs in your own Cloudflare account. Notes are plain files in your R2 bucket, with offline editing, search, and version history.",
+  "tagline": "Markdown notes that live in your Cloudflare account",
+  "features": [
+    "Write markdown notes stored as plain files in your account",
+    "Keep editing offline and sync when you reconnect",
+    "Search every note from the keyboard",
+    "Restore an earlier version of a note",
+    "Share one note with a link you can turn off",
+    "Ask an AI model with a key you provide"
+  ],
+  "alternativeTo": ["Notion", "Obsidian"],
+  "homepage": "https://dotnote.cloud",
+  "repo": "strum-us/dotnote",
+  "license": "LicenseRef-SustainableUse-1.0",
+  "licenseNote": "Source-available: personal and internal use is free; see LICENSE.md",
+  "categories": ["notes", "productivity"],
+  "authors": [{ "name": "Strum Technology", "url": "https://dotnote.cloud", "github": "strum-us" }],
+  "maintainers": ["gssisaac"],
+  "source": { "ref": "v0.2.10", "sha": "baed3f543aae895085b9409490de056e58a39a82" },
+  "install": {
+    "packageManager": "pnpm",
+    // The public repo commits app/wrangler.example.jsonc and gitignores
+    // wrangler.jsonc. The example name is not a packer template suffix, so
+    // wrangler reads this path with --config. It keeps the @shared alias.
+    "wranglerConfig": "app/wrangler.example.jsonc",
+    "buildCommand": "pnpm --filter dotnote-app build",
+    "health": { "path": "/api/health" },
+    // Resource names in the example are the source-deploy defaults. Appflare
+    // creates <worker>-bucket and <worker>-db, so the Worker must be told
+    // those names. The example installer address is not this install.
+    "configPatch": {
+      "vars": {
+        "WORKER_NAME": "{{workerName}}",
+        "R2_BUCKET_NAME": "{{workerName}}-bucket",
+        "D1_DATABASE_NAME": "{{workerName}}-db",
+        "CF_ACCOUNT_ID": "{{accountId}}",
+        "INSTALLER_ORIGIN": null,
+        "DOTNOTE_DIAGNOSTICS_URL": null
+      }
+    }
+  },
+  "plan": "free",
+  "requires": ["r2", "config-patch-values"],
+  "postInstall": [
+    {
+      "type": "markdown",
+      "content": "Open {{appUrl}} and create an account. The first account owns this Dotnote. Your notes are markdown files in this install's R2 bucket.\n\nUpdates come from Appflare. This install is not connected to the Dotnote installer, so Settings will not offer a Cloudflare reconnect."
+    }
+  ]
+}
